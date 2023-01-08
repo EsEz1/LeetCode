@@ -1,2 +1,2 @@
 # LeetCode
-my solution of LeetCode problems
+my solutions of LeetCode problems (Easy-Medium-Hard)
