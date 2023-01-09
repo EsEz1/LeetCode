@@ -1,25 +1,11 @@
 class Solution {
 public:
-    int search(vector<int>& nums, int target)
-    {
-        int start=0;
-        int end =nums.size()-1;
-        while(start<=end)
-        {
-            int mid=start+(end-start)/2;
-            if(nums[mid]==target)
-            {
-                return mid;
-            }
-            else if(nums[mid]>target)
-            {
-                end=mid-1;
-            }
-            else
-            {
-                start=mid+1;
-            }
-        }
-        return -1;
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
+        ListNode *fast = head, *slow = head;
+        for (int i = 0; i < n; i++) fast = fast->next;
+        if (!fast) return head->next;
+        while (fast->next) fast = fast->next, slow = slow->next;
+        slow->next = slow->next->next;
+        return head;
     }
 };
